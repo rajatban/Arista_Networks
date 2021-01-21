@@ -1,0 +1,19 @@
+capacity matrix for AP1, AP2, AP3, AP4, JT
+
+calculate max capacity possible
+
+check if tile for AP2 and AP4 are same
+	if so select second best
+	take highest one as second tile
+	if same choose any
+
+check if conbine AP2 and AP4 capacity is better than JT
+	take the highest value to choose SAPI or JT
+
+check if AP1, AP2 and above tile are same
+	if so select second best
+
+Alocate APs to tiles accordingly
+
+repeat the steps while excluding selected tiles
+
