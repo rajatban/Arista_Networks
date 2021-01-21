@@ -1,0 +1,50 @@
+.mat files
+
+------
+Fig.4 - Plot showing the crossover of the Capacities
+
+File name - Capacity_crossover_vars.mat
+Vars -
+-> SNR - Signal to noise ratio for this observation 
+-> d   - vector containing all the distances where the capacity is calculated
+-> C1  - Capacity for SAPT
+-> C2  - Capacity for JT-TC
+-> C3  - Capacity for UCTx (SAPT with interference)
+
+Plot graph in matlab -
+load("Capacity_crossover_vars.mat");
+figure
+plot(d, C1);
+hold on
+plot(d, C2);
+plot(d, 2.*C3);
+legend('Single AP transmission','JT-TC', '2 AP uncoordinated transmission', 'Location',"north");
+xlabel('Distance from AP1');
+ylabel('Capacity (Bits/sec/Hz)');
+title(['Capacity curve (SNR=' num2str(SNR) 'dB)']);
+
+
+------
+Fig.6 - Snannon Capacity and THP Capacity
+
+File name - THP_capacity_vars.mat
+Vars -
+-> SNR - Signal to noise ratio for this observation 
+-> d   - vector containing all the distances where the capacity is calculated
+-> C1  - Shannon capacity for SAPT
+-> C2  - Shannon capacity for JT-TC
+-> R1  - THP capacity for SAPT
+-> R2  - THP capacity for JT-TC
+
+Plot graph in matlab - 
+load("THP_capacity_vars.mat");
+figure
+plot(d, C1);
+hold on
+plot(d, C2);
+plot(d, R1,'--o');
+plot(d, R2,'--o');
+legend('Shannon Capacity SAPT','Shannon Capacity JT-TC', 'THP Capacity SAPT','THP Capacity JT-TC');
+xlabel('Distance from AP1');
+ylabel('Capacity (Bits/sec/Hz)');
+title(['Capacity curve (SNR=' num2str(SNR) 'dB)']);
